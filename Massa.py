@@ -183,7 +183,6 @@ if selected_option == "Tentang Kami":
     st.write("---")
     
 if selected_option == "Kalkulator":
-        st.header(':red[Kalkulator Penentu Massa Unsur Dalam Suatu Senyawa]')
     # Fungsi untuk menghitung rasio massa atom relatif dengan massa molekul relatif
         def hitung_ratio(atom, senyawa, data1, data2):
     # Data massa atom relatif unsur
@@ -339,7 +338,7 @@ if selected_option == "Kalkulator":
 
         # Tampilan menggunakan Streamlit
         def main():
-            st.title("Kalkulator Rasio Massa Atom Relatif dengan Massa Molekul Relatif")
+            st.title(':red[Kalkulator Penentu Massa Unsur Dalam Suatu Senyawa]')
             
             # Input unsur dan senyawa
             atom = st.text_input("Masukkan simbol atom (H, C, O, dll.):")
