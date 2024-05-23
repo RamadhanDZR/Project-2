@@ -183,9 +183,11 @@ if selected_option == "Tentang Kami":
     st.write("---")
     
 if selected_option == "Kalkulator":
-    # Fungsi untuk menghitung rasio massa atom relatif dengan massa molekul relatif
+    selected_option = option_menu(menu_title=None, options=["Kalkulator","Contoh Soal"], icons=["calculator-fill", "journal-check"], orientation="horizontal")
+    if selected_option == "Kalkulator":
+        # Fungsi untuk menghitung rasio massa atom relatif dengan massa molekul relatif
         def hitung_ratio(atom, senyawa, data1, data2):
-    # Data massa atom relatif unsur
+        # Data massa atom relatif unsur
             massa_atom = {
                 'H': 1.008,
                 'He': 4.0026,
@@ -305,14 +307,14 @@ if selected_option == "Kalkulator":
                 'Lv': 293,
                 'Ts': 294,
                 'Og': 294,
-            }
-            
+                }
+                
             # Hitung jumlah massa atom dalam senyawa
             total_massa_atom = 0
             for elemen, jumlah in senyawa.items():
                 if elemen in massa_atom:
                     total_massa_atom += massa_atom[elemen] * jumlah
-            
+                
             # Hitung rasio massa atom dengan massa molekul relatif
             if atom in massa_atom and total_massa_atom != 0:
                 rasio = massa_atom[atom] / total_massa_atom
@@ -339,20 +341,20 @@ if selected_option == "Kalkulator":
         # Tampilan menggunakan Streamlit
         def main():
             st.title(':red[Kalkulator Penentu Massa Unsur Dalam Suatu Senyawa]')
-            
+                
             # Input unsur dan senyawa
             atom = st.text_input("Masukkan simbol atom (H, C, O, dll.):")
             senyawa = st.text_input("Masukkan rumus senyawa (Contoh: H2O):")
-            
+                
             # Input nilai data 1 dan data 2
             data1 = st.number_input('Masukkan jumlah atom unsur yang dicari:',value=0, placeholder="Ketikkan angka di sini...")
             data2 = st.number_input("Masukkan nilai massa senyawa (gram):", min_value=0.0, format="%.4f")
-            
+                
             if st.button('Hitung'):
                 try:
                     # Parsing rumus senyawa menjadi dictionary
                     senyawa_dict = parse_formula(senyawa)
-                    
+                        
                     # Hitung rasio
                     hasil = hitung_ratio(atom, senyawa_dict, data1, data2)
                     st.write(f"Massa unsur {atom} dalam {senyawa} adalah {hasil:.4f} gram")
@@ -361,3 +363,12 @@ if selected_option == "Kalkulator":
 
         if __name__ == "__main__":
             main()
+
+    if selected_option == "Contoh Soal":
+        st.write ("Di bagian ini kita menyiapkan beberapa contoh soal untuk membuktikan keakuratan kalkulator yang telah dibuat.")
+        st.write ("Kalian bisa mencoba memasukkan data pada soal dan lihat apakah hasil perhitungannya sama.")
+        st.write ("Berikut contoh soalnya:")
+        st.subheader (":red[Contoh Soal 1]")
+        st.image ("Soal1.jpeg")
+        st.subheader (":red[Contoh Soal 2]")
+        st.image ("Soal2.jpeg")
