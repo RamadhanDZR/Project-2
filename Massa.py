@@ -372,5 +372,5 @@ if selected_option == "Kalkulator":
         st.write ("Berapakah massa unsur kalsium yang terdapat pada 0,16 gram senyawa kalsium karbonat jika diketahui Ar kalsium adalah 40 dan Mr kalsium karbonat adalah 100.")
         st.image ("Soal1.jpeg")
         st.subheader (":red[Contoh Soal 2]")
-        st.write ("Berapakah massa unsur Sulfur yang terdapat pada 0,344 gram senyawa barium sulfat jika diketahui Ar kalsium adalah 32 dan Mr barium sulfat adalah 233.")
+        st.write ("Berapakah massa unsur Sulfur yang terdapat pada 0,344 gram senyawa barium sulfat jika diketahui Ar sulfur adalah 32 dan Mr barium sulfat adalah 233.")
         st.image ("Soal2.jpeg")
